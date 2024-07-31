@@ -1,6 +1,6 @@
 from locators.buy_page_locators import BuyPageLocators
 
-answer = {
+ANSWER = {
     0: 'Сутки — 400 рублей. Оплата курьеру — наличными или картой.',
     1: 'Пока что у нас так: один заказ — один самокат. Если хотите покататься с друзьями, '
        'можете просто сделать несколько заказов — один за другим.',
@@ -17,7 +17,7 @@ answer = {
     7: 'Да, обязательно. Всем самокатов! И Москве, и Московской области.'
 }
 
-data_buyer = {
+DATA_BUYER = {
     'name': 'Фродо',
     'surname': 'Беггинс',
     'adress': 'Изенгард',
@@ -25,7 +25,7 @@ data_buyer = {
     'phone': '+71233211221'
 }
 
-data_renter = {
+DATA_RENTER = {
     'name': 'Бильбо',
     'surname': 'Беггинс',
     'adress': 'Эсгарот',
@@ -33,27 +33,27 @@ data_renter = {
     'phone': '11111111111'
 }
 
-massive_buyer = [
-    [BuyPageLocators.SET_NAME, data_buyer['name']],
-    [BuyPageLocators.SET_SURNAME, data_buyer['surname']],
-    [BuyPageLocators.SET_ADRESS, data_buyer['adress']],
-    [BuyPageLocators.SET_STATION, data_buyer['station']],
+MASSIVE_BUYER = [
+    [BuyPageLocators.SET_NAME, DATA_BUYER['name']],
+    [BuyPageLocators.SET_SURNAME, DATA_BUYER['surname']],
+    [BuyPageLocators.SET_ADRESS, DATA_BUYER['adress']],
+    [BuyPageLocators.SET_STATION, DATA_BUYER['station']],
     [BuyPageLocators.KOMSOMOLSKAYA_STATION],
-    [BuyPageLocators.SET_PHONE, data_buyer['phone']],
+    [BuyPageLocators.SET_PHONE, DATA_BUYER['phone']],
     [BuyPageLocators.BUTTON_NEXT]
 ]
 
-massive_renter = [
-    [BuyPageLocators.SET_NAME, data_renter['name']],
-    [BuyPageLocators.SET_SURNAME, data_renter['surname']],
-    [BuyPageLocators.SET_ADRESS, data_renter['adress']],
-    [BuyPageLocators.SET_STATION, data_renter['station']],
+MASSIVE_RENTER = [
+    [BuyPageLocators.SET_NAME, DATA_RENTER['name']],
+    [BuyPageLocators.SET_SURNAME, DATA_RENTER['surname']],
+    [BuyPageLocators.SET_ADRESS, DATA_RENTER['adress']],
+    [BuyPageLocators.SET_STATION, DATA_RENTER['station']],
     [BuyPageLocators.BOULEVARD_ROKOSSOVSKOGO],
-    [BuyPageLocators.SET_PHONE, data_buyer['phone']],
+    [BuyPageLocators.SET_PHONE, DATA_BUYER['phone']],
     [BuyPageLocators.BUTTON_NEXT]
 ]
 
-massive_date_1 = [
+MASSIVE_DATE_1 = [
     [BuyPageLocators.DELIVERY_DATE],
     [BuyPageLocators.DELIVERY_DATE, '29.07.2024'],
     [BuyPageLocators.DELIVERY_DATE_29_07_2024],
@@ -65,7 +65,7 @@ massive_date_1 = [
     [BuyPageLocators.ALLOW_BUTTON_DATE_FORM]
 ]
 
-massive_date_2 = [
+MASSIVE_DATE_2 = [
     [BuyPageLocators.DELIVERY_DATE],
     [BuyPageLocators.DELIVERY_DATE, '30.07.2024'],
     [BuyPageLocators.DELIVERY_DATE_30_07_2024],
@@ -77,9 +77,4 @@ massive_date_2 = [
     [BuyPageLocators.ALLOW_BUTTON_DATE_FORM]
 ]
 
-title_main_page = ('Самокат'
-                   '\nна пару дней'
-                   '\nПривезём его прямо к вашей двери,'
-                   '\nа когда накатаетесь — заберём')
-
-find = 'Найти'
+RENT_COMPLETE = 'Заказ оформлен'

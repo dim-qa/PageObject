@@ -14,14 +14,14 @@ class TestMainPage:
     @allure.step('Клик на вопрос и получение текста ответа')
     @pytest.mark.parametrize(
         "q_num, expected_result", [
-            (0, data.answer[0]),
-            (1, data.answer[1]),
-            (2, data.answer[2]),
-            (3, data.answer[3]),
-            (4, data.answer[4]),
-            (5, data.answer[5]),
-            (6, data.answer[6]),
-            (7, data.answer[7])
+            (0, data.ANSWER[0]),
+            (1, data.ANSWER[1]),
+            (2, data.ANSWER[2]),
+            (3, data.ANSWER[3]),
+            (4, data.ANSWER[4]),
+            (5, data.ANSWER[5]),
+            (6, data.ANSWER[6]),
+            (7, data.ANSWER[7])
         ]
     )
     def test_questions(self, main_page, main_page_click_cookie, q_num, expected_result):
@@ -36,14 +36,14 @@ class TestMainPage:
     @allure.step('Клик по кнопке заказать, заполнение форм и заказ, переход по логотипу')
     @pytest.mark.parametrize(
         "rent_button, profile, date_rent", [
-            (BuyPageLocators.BUTTON_BUY_FOOTER, data.massive_buyer, data.massive_date_1),
-            (BuyPageLocators.BUTTON_BUY_MAIN_PAGE, data.massive_renter, data.massive_date_2)
+            (BuyPageLocators.BUTTON_BUY_FOOTER, data.MASSIVE_BUYER, data.MASSIVE_DATE_1),
+            (BuyPageLocators.BUTTON_BUY_MAIN_PAGE, data.MASSIVE_RENTER, data.MASSIVE_DATE_2)
         ]
     )
     def test_buy_scooter(self, buy_page, main_page_click_cookie, rent_button, profile, date_rent):
         buy_page.filling_out_the_lease(rent_button, profile, date_rent)
         result = buy_page.get_text(BuyPageLocators.TEXT_GOOD_RENT)
-        assert 'Заказ оформлен' in result, f'Нет Заказ оформлен'
+        assert data.RENT_COMPLETE in result, f'Нет Заказ оформлен'
 
     """фикстуры открывают главную страницу
     производиться заполнение формы заказа
@@ -53,10 +53,10 @@ class TestMainPage:
     @allure.step('формы, клик по лого')
     @pytest.mark.parametrize(
         "rent_button, profile, date_rent, logo, equals", [
-            (BuyPageLocators.BUTTON_BUY_FOOTER, data.massive_buyer, data.massive_date_1,
+            (BuyPageLocators.BUTTON_BUY_FOOTER, data.MASSIVE_BUYER, data.MASSIVE_DATE_1,
              LogoLocators.LOGO_SCOOTERS, links.link_main_page),
             (
-                    BuyPageLocators.BUTTON_BUY_MAIN_PAGE, data.massive_renter, data.massive_date_2,
+                    BuyPageLocators.BUTTON_BUY_MAIN_PAGE, data.MASSIVE_RENTER, data.MASSIVE_DATE_2,
                     LogoLocators.LOGO_YANDEX, links.link_yandex)
         ]
     )

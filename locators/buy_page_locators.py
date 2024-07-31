@@ -2,7 +2,7 @@ from selenium.webdriver.common.by import By
 
 
 class BuyPageLocators:
-    BUTTON_BUY_FOOTER = By.CLASS_NAME, 'Button_Button__ra12g'
+    BUTTON_BUY_FOOTER = By.CLASS_NAME, ".//*[@class='Button_Button__ra12g' and text()='Заказать']"
     BUTTON_BUY_MAIN_PAGE = By.XPATH, ".//*[@class='Button_Button__ra12g Button_Middle__1CSJM' and text()='Заказать']"
 
     SET_NAME = By.XPATH, ".//*[@placeholder='* Имя']"
@@ -29,9 +29,5 @@ class BuyPageLocators:
     ALLOW_BUTTON_DATE_FORM = By.XPATH, ".//*[@class='Button_Button__ra12g Button_Middle__1CSJM']"
     ALLOW_BUTTON_RENT = By.XPATH, ".//*[@class='Button_Button__ra12g Button_Middle__1CSJM' and text()='Да']"
     TEXT_GOOD_RENT = By.XPATH, ".//*[@class='Order_ModalHeader__3FDaJ' and text()='Заказ оформлен']"
-
-    GOOD_TEST = By.CLASS_NAME, 'Order_ModalHeader__3FDaJ'
-
-    FORM_STATUS = By.CLASS_NAME, 'Order_Modal__YZ-d3'
 
     BUTTON_STATUS = By.XPATH, ".//*[@class='Button_Button__ra12g Button_Middle__1CSJM' and text()='Посмотреть статус']"
